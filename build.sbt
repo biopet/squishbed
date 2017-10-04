@@ -1,17 +1,17 @@
 organization := "com.github.biopet"
-//TODO: change name
-name := "tool-template"
+name := "squishbed"
 
 scalaVersion := "2.11.11"
 
 resolvers += Resolver.sonatypeRepo("snapshots")
 
 libraryDependencies += "com.github.biopet" %% "biopet-tool-utils" % "0.1.0-SNAPSHOT"
+libraryDependencies += "com.github.biopet" %% "biopet-ngs-utils" % "0.1.0-SNAPSHOT"
 
 libraryDependencies += "com.github.biopet" %% "biopet-test-utils" % "0.1.0-SNAPSHOT" % Test
 
 //TODO: change mainClass
-mainClass in assembly := Some("nl.biopet.tools.template.Main")
+mainClass in assembly := Some("nl.biopet.tools.squishbed.SquishBed")
 
 useGpg := true
 
