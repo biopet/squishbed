@@ -10,7 +10,8 @@ object SquishBed extends ToolCommand {
       parser.parse(args, Args()).getOrElse(throw new IllegalArgumentException)
 
     if (!cmdArgs.input.exists)
-      throw new IllegalStateException("Input file not found, file: " + cmdArgs.input)
+      throw new IllegalStateException(
+        "Input file not found, file: " + cmdArgs.input)
 
     logger.info("Start")
 
@@ -20,13 +21,15 @@ object SquishBed extends ToolCommand {
     logger.info(s"Total bases: $length")
     logger.info(s"Total bases on reference: $refLength")
     logger.info("Start squishing")
-    val squishBed = records.squishBed(cmdArgs.strandSensitive, cmdArgs.nameSensitive).sorted
+    val squishBed =
+      records.squishBed(cmdArgs.strandSensitive, cmdArgs.nameSensitive).sorted
     logger.info("Done squishing")
     val squishLength = squishBed.length
     val squishRefLength = squishBed.combineOverlap.length
     logger.info(s"Total bases left: $squishLength")
     logger.info(s"Total bases left on reference: $squishRefLength")
-    logger.info(s"Total bases removed from ref: ${refLength - squishRefLength}")
+    logger.info(
+      s"Total bases removed from ref: ${refLength - squishRefLength}")
     squishBed.writeToFile(cmdArgs.output)
 
     logger.info("Done")
