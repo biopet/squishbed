@@ -25,7 +25,7 @@ class SquishBedTest extends BiopetTest {
       ))
     overlapList.writeToFile(intputFile)
 
-    SquishBed.main(Array("-I", intputFile.getAbsolutePath, "-o", outputFile.getAbsolutePath))
+    SquishBed.main(Array("-i", intputFile.getAbsolutePath, "-o", outputFile.getAbsolutePath))
 
     val output = BedRecordList.fromFile(outputFile)
 
@@ -46,7 +46,7 @@ class SquishBedTest extends BiopetTest {
     intputFile.delete()
     outputFile.delete()
     intercept[IllegalStateException] {
-      SquishBed.main(Array("-I", intputFile.getAbsolutePath, "-o", outputFile.getAbsolutePath))
+      SquishBed.main(Array("-i", intputFile.getAbsolutePath, "-o", outputFile.getAbsolutePath))
     }.getMessage shouldBe s"Input file not found, file: ${intputFile.getAbsolutePath}"
   }
 
