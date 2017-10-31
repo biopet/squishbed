@@ -2,11 +2,11 @@ package nl.biopet.tools.squishbed
 
 import java.io.File
 
-import nl.biopet.test.BiopetTest
+import nl.biopet.utils.test.tools.ToolTest
 import nl.biopet.utils.ngs.intervals.{BedRecord, BedRecordList}
 import org.testng.annotations.Test
 
-class SquishBedTest extends BiopetTest {
+class SquishBedTest extends ToolTest[Args] {
   @Test
   def testMain(): Unit = {
     val intputFile = File.createTempFile("regions.", ".bed")

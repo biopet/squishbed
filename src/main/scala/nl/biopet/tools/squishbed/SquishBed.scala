@@ -3,7 +3,7 @@ package nl.biopet.tools.squishbed
 import nl.biopet.utils.ngs.intervals.BedRecordList
 import nl.biopet.utils.tool.ToolCommand
 
-object SquishBed extends ToolCommand {
+object SquishBed extends ToolCommand[Args] {
   def main(args: Array[String]): Unit = {
     val parser = new ArgsParser(toolName)
     val cmdArgs =
