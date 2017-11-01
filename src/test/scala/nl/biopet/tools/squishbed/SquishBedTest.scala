@@ -7,6 +7,7 @@ import nl.biopet.utils.ngs.intervals.{BedRecord, BedRecordList}
 import org.testng.annotations.Test
 
 class SquishBedTest extends ToolTest[Args] {
+  def toolCommand: SquishBed.type = SquishBed
   @Test
   def testMain(): Unit = {
     val intputFile = File.createTempFile("regions.", ".bed")

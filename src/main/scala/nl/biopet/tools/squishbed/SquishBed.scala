@@ -4,6 +4,8 @@ import nl.biopet.utils.ngs.intervals.BedRecordList
 import nl.biopet.utils.tool.ToolCommand
 
 object SquishBed extends ToolCommand[Args] {
+  def emptyArgs: Args = Args()
+  def argsParser = new ArgsParser(toolName)
   def main(args: Array[String]): Unit = {
     val parser = new ArgsParser(toolName)
     val cmdArgs =
