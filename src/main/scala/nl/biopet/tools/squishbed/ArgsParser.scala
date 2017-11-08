@@ -5,8 +5,7 @@ import java.io.File
 import nl.biopet.utils.tool.AbstractOptParser
 
 class ArgsParser(cmdName: String) extends AbstractOptParser[Args](cmdName) {
-  opt[File]('i', "input") required () valueName("<file>") action {
-    ((x, c) => c.copy(input = x))
+  opt[File]('i', "input") required () valueName ("<file>") action { ((x, c) => c.copy(input = x))
   } text "Input BED file"
   opt[File]('o', "output")
     .required()
