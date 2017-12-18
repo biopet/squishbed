@@ -5,7 +5,7 @@ import nl.biopet.utils.tool.ToolCommand
 
 object SquishBed extends ToolCommand[Args] {
   def emptyArgs: Args = Args()
-  def argsParser = new ArgsParser(toolName)
+  def argsParser = new ArgsParser(this)
   def main(args: Array[String]): Unit = {
     val cmdArgs = cmdArrayToArgs(args)
 
