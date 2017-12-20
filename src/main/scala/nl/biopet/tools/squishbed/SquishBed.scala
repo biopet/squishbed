@@ -84,15 +84,14 @@ object SquishBed extends ToolCommand[Args] {
         List("ChrQ", "60", "70")
       )
     )
-    val exampleTableAfter = htmlTable(
-      exampleTableHeaders,
-        List(
-          List("ChrQ", "0", "5"),
-          List("ChrQ", "15", "20"),
-          List("ChrQ", "25", "35"),
-          List("ChrQ", "50", "60"),
-          List("ChrQ", "70", "80")
-        ))
+    val exampleTableAfter = htmlTable(exampleTableHeaders,
+                                      List(
+                                        List("ChrQ", "0", "5"),
+                                        List("ChrQ", "15", "20"),
+                                        List("ChrQ", "25", "35"),
+                                        List("ChrQ", "50", "60"),
+                                        List("ChrQ", "70", "80")
+                                      ))
     s"""
        |The following example will create a squished BED file where the
        |strand and name column have been taken into account:
