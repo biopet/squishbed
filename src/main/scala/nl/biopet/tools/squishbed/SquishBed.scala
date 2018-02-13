@@ -50,8 +50,7 @@ object SquishBed extends ToolCommand[Args] {
     val squishRefLength = squishBed.combineOverlap.length
     logger.info(s"Total bases left: $squishLength")
     logger.info(s"Total bases left on reference: $squishRefLength")
-    logger.info(
-      s"Total bases removed from ref: ${refLength - squishRefLength}")
+    logger.info(s"Total bases removed from ref: ${refLength - squishRefLength}")
     squishBed.writeToFile(cmdArgs.output)
 
     logger.info("Done")
